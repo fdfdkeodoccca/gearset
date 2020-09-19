@@ -1,4 +1,4 @@
-package com.pickman;
+package main.java.GearSetAPI;
 
 /**
  * Represents one change gear with a fixed number of teeth

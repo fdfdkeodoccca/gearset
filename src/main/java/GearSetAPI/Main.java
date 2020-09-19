@@ -1,4 +1,4 @@
-package com.pickman;
+package main.java.GearSetAPI;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;

@@ -1,12 +1,12 @@
-package com.pickman;
+package main.java.GearSetAPI;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-import static com.pickman.Main.DECIMAL_ACCURACY;
-import static com.pickman.Main.GLOBAL_ROUNDING_MODE;
+import static main.java.GearSetAPI.Main.DECIMAL_ACCURACY;
+import static main.java.GearSetAPI.Main.GLOBAL_ROUNDING_MODE;
 
 /**
  * Represents one or more change gear sets that produce a compound ratio
