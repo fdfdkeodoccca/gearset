@@ -1,0 +1,23 @@
+{
+  "name": "gearset",
+  "version": "0.0.2",
+  "description": "Compound gear ratio calculator",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "coverage": "jest --collect-coverage"
+  },
+  "keywords": [],
+  "author": "Tim Pickman",
+  "license": "ISC",
+
+  "dependencies": {
+  },
+
+  "devDependencies": {
+    "typescript": "4.9.4",
+    "@types/jest": "^29.2.5",
+    "jest": "^29.3.1",
+    "ts-jest": "^29.0.5"
+  }
+}
