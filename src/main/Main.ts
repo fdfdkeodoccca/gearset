@@ -11,7 +11,7 @@ export class Main {
     //leadscrew threads per inch, decimal acceptable
     leadScrewTPI: number = 8;
 
-    intendedTPI: number = 6;
+    intendedTPI: number = 4;
 
     intendedMetricPitch: number = 1;
 
@@ -24,9 +24,9 @@ export class Main {
 
     intendedRatio: [number, number] = [0, 0];
 
-    filteredCombinations: GearRatio[];
+    filteredCombinations: GearRatio[] = [];
 
-    allAvailableRatios: GearRatio[];
+    allAvailableRatios: GearRatio[] = [];
 
     setIntendedRatio() {
 
@@ -76,16 +76,17 @@ export class Main {
 
         consoleOutput() {
 
-            console.log("Possible exact combinations from gears: " + this.originalGearList);
+            //console.log("Possible exact combinations from gears: " + this.originalGearList);
 
-            if(this.filteredCombinations.length===0){console.log("No valid combinations found");
+            if(this.allAvailableRatios.length===0){console.error("No valid combinations found");
             return;
             }
 
-            for (let i = 0; i < this.filteredCombinations.length; i++) {
+            for (let i = 0; i < this.allAvailableRatios.length; i++) {
 
                 console.log('Solution ' + (i+1) + ' Drivens: '
-                    + this.filteredCombinations[i].Drivens + '\r\n' + 'Drivers: ' + this.filteredCombinations[i].Drivers);
+                    + this.allAvailableRatios[i].Drivens + '\r\n' + 'Drivers: ' + this.allAvailableRatios[i].Drivers
+                + ' with ratio: ' + this.allAvailableRatios[i].ratio);
             }
         }
 }

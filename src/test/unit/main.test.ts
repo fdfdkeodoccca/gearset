@@ -1,5 +1,6 @@
 import {GearRatio} from "../../main/GearRatio";
 import {simplifyFraction} from '../../main/Calc';
+import {Main} from "../../main/Main";
 
 test('22/58 and 14/127 should produce correct ratio', () => {
     const gr = new GearRatio;
@@ -152,4 +153,14 @@ test('Fraction with decimal components 15/1.80005 should be fixed', () => {
 
 test('Fraction with decimal components 15.2/15.4 should be fixed', () => {
     expect(simplifyFraction([15.2,15.4])).toStrictEqual([76,77]);
+});
+
+test('Full test', () => {
+    const main = new Main();
+    main.generateRatioList([20,40,32,48]);
+    main.intendedRatio = [1,2];
+    main.filterNoError();
+    main.consoleOutput();
+    expect(main.allAvailableRatios.length).toBe(3);
+    expect(main.allAvailableRatios[0].ratio).toStrictEqual([12,5]);
 });
