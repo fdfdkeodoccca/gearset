@@ -1,9 +1,9 @@
 import {simplifyFraction} from "./Calc";
-import {GearRatio} from "./model/GearRatio";
+import {GearRatio} from "./GearRatio";
 
 export class Main {
 
-        MM_PER_INCH = 25.4;
+    MM_PER_INCH = 25.4;
 
     //must all be integers between max and min allowed values. Duplicates are acceptable. Minimum of 2 values
     originalGearList: number[] = [20, 20, 33, 48, 127, 55];
@@ -15,7 +15,7 @@ export class Main {
 
     intendedMetricPitch: number = 1;
 
-    //leadscrew pitch in mm if metric
+    //leadscrew pitch in mm if metric. decimal acceptable
     leadScrewMetricPitch: number = 2;
 
     isImperialLeadscrew: boolean = true;
@@ -50,13 +50,12 @@ export class Main {
 
             for (let i = 0; i < gearList.length; i++) {
 
-               let currentGear: number = gearList.pop();
+               let currentGear = gearList.pop();
 
                 for (let j = 0; j < gearList.length; j++) {
-
-                    let newgear: GearRatio = new GearRatio();
-                    newgear.addGearPair(currentGear, gearList[j]);
-                    this.allAvailableRatios.push(newgear);
+                    let newRatio = new GearRatio();
+                    newRatio.addGearPair(currentGear, gearList[j]);
+                    this.allAvailableRatios.push(newRatio);
                     this.generateRatioList(gearList);
                 }
             }
@@ -87,9 +86,6 @@ export class Main {
 
                 console.log('Solution ' + (i+1) + ' Drivens: '
                     + this.filteredCombinations[i].Drivens + '\r\n' + 'Drivers: ' + this.filteredCombinations[i].Drivers);
-
             }
-
         }
-
 }
