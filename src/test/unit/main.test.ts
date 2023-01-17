@@ -1,4 +1,4 @@
-import {GearRatio} from "../../main/model/GearRatio";
+import {GearRatio} from "../../main/GearRatio";
 
 
     test('22/58 and 14/127 should produce correct ratio', () => {

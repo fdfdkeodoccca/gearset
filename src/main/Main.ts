@@ -33,13 +33,13 @@ export class Main {
         if (this.isImperialLeadscrew) {
             this.intendedRatio[0] = this.intendedTPI;
         } else {
-            this.intendedRatio[0] = 1 / (this.intendedMetricPitch * MM_PER_INCH);//might be simpler
+            this.intendedRatio[0] = 1 / (this.intendedMetricPitch * this.MM_PER_INCH);//might be simpler
         }
 
         if (this.isImperialOutput) {
             this.intendedRatio[1] = this.leadScrewTPI;
         } else {
-            this.intendedRatio[1] = 1 / (this.leadScrewMetricPitch * MM_PER_INCH);
+            this.intendedRatio[1] = 1 / (this.leadScrewMetricPitch * this.MM_PER_INCH);
         }
 
         this.intendedRatio = simplifyFraction(this.intendedRatio);

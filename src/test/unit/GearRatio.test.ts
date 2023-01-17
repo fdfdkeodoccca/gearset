@@ -1,4 +1,4 @@
-import {GearRatio} from "../../main/model/GearRatio";
+import {GearRatio} from "../../main/GearRatio";
 
 test('toothCount of 50, 40 should return true', () => {
     const gr = new GearRatio;

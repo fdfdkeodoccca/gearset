@@ -1,4 +1,4 @@
-import {simplifyFraction} from '../Calc'
+import {simplifyFraction} from './Calc'
 export class GearRatio {
 
     Drivers: number[] = [];
